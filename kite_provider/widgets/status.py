@@ -17,11 +17,11 @@ from qtpy.QtCore import Slot
 # Local imports
 from spyder.api.widgets.status import StatusBarWidget
 from spyder.config.base import _, running_under_pytest
-from spyder.plugins.completion.providers.kite.utils.status import (
+from utils.status import (
     check_if_kite_installed, NOT_INSTALLED)
-from spyder.plugins.completion.providers.kite.utils.install import (
+from utils.install import (
     KiteInstallationThread)
-from spyder.plugins.completion.providers.kite.widgets.install import (
+from widgets.install import (
     KiteInstallerDialog)
 from spyder.utils.icon_manager import ima
 

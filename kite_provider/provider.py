@@ -17,11 +17,11 @@ from qtpy.QtCore import Slot
 from qtpy.QtWidgets import QMessageBox
 
 # Local imports
-from client import KiteClient
-from utils.status import (
+from kite_provider.client import KiteClient
+from kite_provider.utils.status import (
     check_if_kite_running, check_if_kite_installed,
     check_kite_installers_availability)
-from widgets import (
+from kite_provider.widgets import (
     KiteInstallationErrorMessage, KiteStatusWidget)
 
 #Spyder imports

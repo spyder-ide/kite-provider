@@ -36,7 +36,7 @@ setup(
     ],
     packages=find_packages(),
     entry_points={
-        "spyder.plugins": ["kite = spyder.plugins.completion.providers.kite.provider:"
+        "spyder.plugins": ["kite = kite_provider.provider:"
                            "KiteProvider"],
     },
     classifiers=[

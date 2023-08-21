@@ -5,7 +5,7 @@
 # (see spyder/__init__.py for details)
 
 
-from spyder.plugins.completion.providers.kite.parsing import (
+from parsing import (
     find_returning_function_path)
 
 
