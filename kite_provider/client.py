@@ -16,12 +16,11 @@ import requests
 
 # Local imports
 from spyder.config.base import _, running_under_pytest
-from spyder.plugins.completion.providers.kite import (
-    KITE_ENDPOINTS, KITE_REQUEST_MAPPING)
-from spyder.plugins.completion.providers.kite.decorators import class_register
-from spyder.plugins.completion.providers.kite.providers import (
+from __init__.py import KITE_ENDPOINTS, KITE_REQUEST_MAPPING
+from decorators import class_register
+from providers import (
     KiteMethodProviderMixIn)
-from spyder.plugins.completion.providers.kite.utils.status import status
+from utils.status import status
 from spyder.py3compat import TEXT_TYPES
 
 
