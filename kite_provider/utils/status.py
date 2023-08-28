@@ -21,16 +21,12 @@ NOT_INSTALLED = 'not installed'
 RUNNING = 'ready'
 NOT_RUNNING = 'not running'
 
-# Installer URLs
-WINDOWS_URL = "https://release.kite.com/dls/windows/current"
-LINUX_URL = "https://release.kite.com/dls/linux/current"
-MAC_URL = "https://release.kite.com/dls/mac/current"
 
 logger = logging.getLogger(__name__)
 
 
 def check_if_kite_installed():
-    """Detect if kite is installed and return the installation path."""
+    """Detect if kite is installed"""
     path = ''
     if os.name == 'nt':
         path = 'C:\\Program Files\\Kite\\kited.exe'

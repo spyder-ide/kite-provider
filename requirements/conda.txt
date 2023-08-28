@@ -1,0 +1,5 @@
+psutils
+qtawesome
+qtpy
+setuptools
+spyder>=6.0
