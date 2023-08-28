@@ -19,8 +19,7 @@ from qtpy.QtWidgets import QMessageBox
 # Local imports
 from kite_provider.client import KiteClient
 from kite_provider.utils.status import (
-    check_if_kite_running, check_if_kite_installed,
-    check_kite_installers_availability)
+    check_if_kite_running, check_if_kite_installed)
 from kite_provider.widgets import (
     KiteInstallationErrorMessage, KiteStatusWidget)
 
@@ -48,8 +47,7 @@ class KiteProvider(SpyderCompletionProvider):
         ('spyder_runs', 1),
         ('show_installation_dialog', True),
         ('show_onboarding', True),
-        ('show_installation_error_message', True),
-        ('installers_available', True)
+        ('show_installation_error_message', True)
     ]
     CONF_VERSION = "0.1.0"
 
@@ -239,11 +237,9 @@ class KiteProvider(SpyderCompletionProvider):
             KiteStatusWidget.ID, 'show_installation_dialog', tuple(), {})
 
     def setup_menus(self):
-        installers_available = check_kite_installers_availability()
-        self.set_conf('installers_available', installers_available)
 
         is_kite_installed, kite_path = check_if_kite_installed()
-        if not is_kite_installed and installers_available:
+        if not is_kite_installed:
             install_kite_action = self.create_action(
                 KiteProviderActions.Installation,
                 _("Install Kite completion engine"),
