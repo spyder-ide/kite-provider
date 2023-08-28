@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Copyright © 2022, spyder-vim
+# Copyright © 2022, kite-provider
 #
 # Licensed under the terms of the MIT license
 # ----------------------------------------------------------------------------
 """
-spyder-vim setup.
+kite-provider setup.
 """
 import io
 from setuptools import find_packages
@@ -27,12 +27,13 @@ setup(
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     license="MIT license",
-    url="https://github.com/spyder-ide/spyder-vim",
+    url="https://github.com/spyder-ide/kite-provider",
     python_requires=">= 3.7",
     install_requires=[
         "qtpy",
         "qtawesome",
-        "spyder>=5.3.3",
+        "psutil",
+        "spyder>=6.0",
     ],
     packages=find_packages(),
     entry_points={
