@@ -21,8 +21,6 @@ from spyder.config.base import _
 from spyder.utils.image_path_manager import get_image_path
 from spyder.utils.icon_manager import ima
 from spyder.utils.palette import QStylePalette
-from kite_provider.utils.install import (
-    ERRORED, INSTALLING, FINISHED, CANCELLED)
 from spyder.utils.stylesheet import DialogStyle
 
 

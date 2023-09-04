@@ -19,8 +19,6 @@ from spyder.api.widgets.status import StatusBarWidget
 from spyder.config.base import _, running_under_pytest
 from kite_provider.utils.status import (
     check_if_kite_installed, NOT_INSTALLED)
-from kite_provider.utils.install import (
-    KiteInstallationThread)
 from kite_provider.widgets.install import (
     KiteInstallerDialog)
 from spyder.utils.icon_manager import ima
