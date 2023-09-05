@@ -29,6 +29,7 @@ from spyder.config.base import _, running_under_pytest
 from spyder.plugins.completion.api import SpyderCompletionProvider
 from spyder.plugins.mainmenu.api import ApplicationMenus, ToolsMenuSections
 from spyder.utils.icon_manager import ima
+from spyder.utils.image_path_manager import get_image_path
 from spyder.utils.programs import run_program
 
 
@@ -243,7 +244,7 @@ class KiteProvider(SpyderCompletionProvider):
             install_kite_action = self.create_action(
                 KiteProviderActions.Installation,
                 _("Install Kite completion engine"),
-                icon=ima.icon('kite'),
+                icon=ima.icon(get_image_path('kite')),
                 triggered=self.show_kite_installation)
 
             self.add_item_to_application_menu(
