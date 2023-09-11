@@ -20,16 +20,15 @@ from qtpy.QtWidgets import QMessageBox
 from kite_provider.client import KiteClient
 from kite_provider.utils.status import (
     check_if_kite_running, check_if_kite_installed)
-from kite_provider.widgets import (
-    KiteInstallationErrorMessage, KiteStatusWidget)
+from kite_provider.widgets import (KiteStatusWidget)
 
 #Spyder imports
 from spyder.api.config.decorators import on_conf_change
-from spyder.config.base import _, running_under_pytest
+from spyder.config.base import _, running_under_pytest, get_module_data_path
 from spyder.plugins.completion.api import SpyderCompletionProvider
 from spyder.plugins.mainmenu.api import ApplicationMenus, ToolsMenuSections
 from spyder.utils.icon_manager import ima
-from spyder.utils.image_path_manager import get_image_path
+from spyder.utils.image_path_manager import IMAGE_PATH_MANAGER
 from spyder.utils.programs import run_program
 
 
@@ -54,6 +53,7 @@ class KiteProvider(SpyderCompletionProvider):
 
     def __init__(self, parent, config):
         super().__init__(parent, config)
+        IMAGE_PATH_MANAGER.add_image_path(get_module_data_path('kite_provider',relpath='images'))
         self.available_languages = []
         self.client = KiteClient(None)
         self.kite_process = None
@@ -79,8 +79,6 @@ class KiteProvider(SpyderCompletionProvider):
         # Config
         self.update_kite_configuration(self.config)
 
-        # Menus
-        self.setup_menus()
 
     # ------------------ SpyderCompletionProvider methods ---------------------
     def get_name(self):
@@ -120,9 +118,6 @@ class KiteProvider(SpyderCompletionProvider):
                     "<code>{kite_dir}</code>").format(
                         kite_dir=osp.dirname(path))
 
-                dialog_wrapper = KiteInstallationErrorMessage.instance(
-                    err_str, self.set_conf)
-                self.sig_show_widget.emit(dialog_wrapper)
         finally:
             # Always start client to support possibly undetected Kite builds
             self.client.start()
@@ -232,23 +227,3 @@ class KiteProvider(SpyderCompletionProvider):
 
     def create_statusbar(self, parent):
         return KiteStatusWidget(parent, self)
-
-    def show_kite_installation(self):
-        self.sig_call_statusbar.emit(
-            KiteStatusWidget.ID, 'show_installation_dialog', tuple(), {})
-
-    def setup_menus(self):
-
-        is_kite_installed, kite_path = check_if_kite_installed()
-        if not is_kite_installed:
-            install_kite_action = self.create_action(
-                KiteProviderActions.Installation,
-                _("Install Kite completion engine"),
-                icon=ima.icon(get_image_path('kite')),
-                triggered=self.show_kite_installation)
-
-            self.add_item_to_application_menu(
-                install_kite_action,
-                menu_id=ApplicationMenus.Tools,
-                section=ToolsMenuSections.External,
-                before_section=ToolsMenuSections.Extras)

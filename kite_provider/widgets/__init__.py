@@ -6,5 +6,4 @@
 
 """Kite related widgets."""
 
-from .messagebox import KiteInstallationErrorMessage
 from .status import KiteStatusWidget
