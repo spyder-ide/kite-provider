@@ -14,13 +14,14 @@ import logging
 # Third party imports
 from qtpy.QtCore import Slot
 
-# Local imports
+# Spyder imports
 from spyder.api.widgets.status import StatusBarWidget
-from spyder.config.base import _, running_under_pytest
+from spyder.config.base import _
+from spyder.utils.icon_manager import ima
+
+# Local imports
 from kite_provider.utils.status import (
     check_if_kite_installed, NOT_INSTALLED)
-from spyder.utils.icon_manager import ima
-from spyder.utils.image_path_manager import get_image_path
 
 logger = logging.getLogger(__name__)
 
@@ -65,4 +66,4 @@ class KiteStatusWidget(StatusBarWidget):
         return self.tooltip
 
     def get_icon(self):
-        return ima.icon(get_image_path('kite'))
+        return ima.icon('kite')
