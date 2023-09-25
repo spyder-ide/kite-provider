@@ -14,14 +14,17 @@ from urllib.parse import quote
 from qtpy.QtCore import QObject, QThread, Signal, QMutex
 import requests
 
-# Local imports
+#Spyder imports
 from spyder.config.base import _, running_under_pytest
+from spyder.py3compat import TEXT_TYPES
+
+
+# Local imports
 from kite_provider import KITE_ENDPOINTS, KITE_REQUEST_MAPPING
 from kite_provider.decorators import class_register
 from kite_provider.providers import (
     KiteMethodProviderMixIn)
 from kite_provider.utils.status import status
-from spyder.py3compat import TEXT_TYPES
 
 
 logger = logging.getLogger(__name__)
