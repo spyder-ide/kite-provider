@@ -213,7 +213,6 @@ class DocumentProvider:
 
     @handles(CompletionRequestTypes.DOCUMENT_HOVER)
     def process_hover(self, response):
-        # logger.debug(response)
         text = None
         logger.debug(response)
         if response is not None:
@@ -274,7 +273,6 @@ class DocumentProvider:
                     'documentation': documentation,
                     'parameters': parameters
                 }
-                # doc_signatures.append(base_signature)
                 params = {
                     'signatures': base_signature,
                     'activeSignature': 0,

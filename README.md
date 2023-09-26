@@ -3,7 +3,6 @@
 ## Project Info
 
 [![Project License](https://img.shields.io/pypi/l/kite-provider.svg)](./LICENSE.txt)
-[![pypi version](https://img.shields.io/pypi/v/kite-provider.svg)](https://pypi.python.org/pypi/kite-provider)
 [![Join the chat at https://gitter.im/spyder-ide/public](https://badges.gitter.im/spyder-ide/spyder.svg)](https://gitter.im/spyder-ide/public)
 [![OpenCollective Backers](https://opencollective.com/spyder/backers/badge.svg?color=blue)](#backers)
 [![OpenCollective Sponsors](https://opencollective.com/spyder/sponsors/badge.svg?color=blue)](#sponsors)
@@ -22,17 +21,16 @@
 
 ## Installation
 
-To install this plugin, you can use either the ``conda`` or ``pip`` package managers, as it follows:
+To use this completions provider you will need to have at Spyder 6 (at least 6.0.0a3) and install Kite (latest executable available from the [Kite release page](https://github.com/kiteco/kiteco-public/releases/tag/2021-06-10))
 
-Using conda:
+To install the provider package, you can use `pip` with something like:
+
+    pip install git+https://github.com/spyder-ide/spyder-kite.git
+
+**Note:** Support for Kite is not available anymore. The code here is to be used for demonstration proposes and using it could broke your Spyder setup or made Spyder unstable! Use/install at your own risk.
 
 
-Using pip (only if you don't use Anaconda):
 
-
-## Usage
-
-After installing kite-provider ...
 
 ## Dependencies
 

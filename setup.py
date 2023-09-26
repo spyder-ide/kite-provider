@@ -20,10 +20,10 @@ with io.open("README.md", encoding="utf-8") as f:
 setup(
     # See: https://setuptools.readthedocs.io/en/latest/setuptools.html
     name="kite-provider",
-    version="0.1.0",
-    author="",
+    version="0.1.0dev0",
+    author="Spyder Project Contributors",
     author_email="spyder.python@gmail.com",
-    description="A plugin to enable kite provider to the spyder editor",
+    description="Kite completions provider for Spyder",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     license="MIT license",
@@ -46,7 +46,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 7 - Inactive",
         "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Developers",

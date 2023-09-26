@@ -22,7 +22,7 @@ from kite_provider.utils.status import (
     check_if_kite_running, check_if_kite_installed)
 from kite_provider.widgets import (KiteStatusWidget)
 
-#Spyder imports
+# Spyder imports
 from spyder.api.config.decorators import on_conf_change
 from spyder.config.base import _, running_under_pytest, get_module_data_path
 from spyder.plugins.completion.api import SpyderCompletionProvider
@@ -33,10 +33,6 @@ from spyder.utils.programs import run_program
 
 
 logger = logging.getLogger(__name__)
-
-
-class KiteProviderActions:
-    Installation = 'kite_installation'
 
 
 class KiteProvider(SpyderCompletionProvider):
@@ -123,14 +119,6 @@ class KiteProvider(SpyderCompletionProvider):
             self.client.start()
 
     def shutdown(self):
-        try:
-            self.remove_item_from_application_menu(
-                KiteProviderActions.Installation,
-                menu_id=ApplicationMenus.Tools)
-        except KeyError:
-            # Action does not exist
-            pass
-
         self.client.stop()
         if self.kite_process is not None:
             self.kite_process.kill()
