@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Copyright © 2022, kite-provider
+# Copyright © Spyder Project Contributors
 #
 # Licensed under the terms of the MIT license
 # ----------------------------------------------------------------------------
@@ -28,12 +28,12 @@ setup(
     long_description_content_type="text/markdown",
     license="MIT license",
     url="https://github.com/spyder-ide/kite-provider",
-    python_requires=">= 3.7",
+    python_requires=">= 3.8",
     install_requires=[
         "qtpy",
         "qtawesome",
         "psutil",
-        "spyder>=6.0",
+        "spyder>=6.0.0a3",
     ],
     packages=find_packages(),
     entry_points={
