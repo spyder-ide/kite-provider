@@ -179,9 +179,8 @@ See below for the full text of the Creative Commons Attribution International 4.
 
 Files covered:
 
-spyder/images/dark/kite.svg
-spyder/images/kite/kite_copilot.png
-spyder/images/light/kite.svg
+kite_provider/images/dark/kite.svg
+kite_provider/images/light/kite.svg
 
 
 -------------------------------------------------------------------------------
