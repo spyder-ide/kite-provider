@@ -20,7 +20,7 @@ jobs:
       fail-fast: false 
       matrix:
         PYTHON_VERSION: ['3.8', '3.10']
-        SPYDER_SOURCE: ['conda', 'git']
+        SPYDER_SOURCE: ['git']
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
