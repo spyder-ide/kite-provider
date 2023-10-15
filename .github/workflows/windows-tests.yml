@@ -20,7 +20,7 @@ jobs:
       fail-fast: false 
       matrix:
         PYTHON_VERSION: ['3.8', '3.10']        
-        SPYDER_SOURCE: ['conda', 'git']
+        SPYDER_SOURCE: ['git']
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
@@ -32,7 +32,7 @@ jobs:
            auto-activate-base: false
            python-version: ${{ matrix.PYTHON_VERSION }}
            use-only-tar-bz2: true
-           channels: conda-forge,defaults
+           channels: conda-forge/label/spyder_kernels_rc,conda-forge,defaults
            channel-priority: strict
            miniforge-variant: Mambaforge
       - name: Checkout Spyder from git
