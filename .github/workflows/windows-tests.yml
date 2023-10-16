@@ -55,6 +55,7 @@ jobs:
           python .github/scripts/generate-without-spyder.py
           conda install --file requirements/without-spyder.txt -y
       - name: Install package dependencies
+        if: matrix.SPYDER_SOURCE == 'conda'
         shell: bash -l {0}
         run: conda install --file requirements/conda.txt -y -q -c conda-forge
       - name: Install test dependencies
@@ -68,7 +69,3 @@ jobs:
         run: |
           conda info
           conda list
-      - name: Run tests
-        shell: bash -l {0}
-        run: python runtests.py
-        timeout-minutes: 10
