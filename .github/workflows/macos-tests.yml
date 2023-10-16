@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false 
       matrix:
-        PYTHON_VERSION: ['3.8', '3.10']
+        PYTHON_VERSION: ['3.10']
         SPYDER_SOURCE: ['git']
     steps:
       - name: Checkout branch
