@@ -31,7 +31,6 @@ jobs:
            auto-update-conda: true
            auto-activate-base: false
            python-version: ${{ matrix.PYTHON_VERSION }}
-           use-only-tar-bz2: true
            channels: conda-forge/label/spyder_kernels_rc,conda-forge,defaults
            channel-priority: strict
            miniforge-variant: Mambaforge
