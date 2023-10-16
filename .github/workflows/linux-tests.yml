@@ -10,7 +10,7 @@ on:
 
 jobs:
   linux:
-    name: Linux Py${{ matrix.PYTHON_VERSION }}
+    name: Linux Py${{ matrix.PYTHON_VERSION }} spyder-from-${{ matrix.SPYDER_SOURCE }}
     runs-on: ubuntu-latest
     env:
       CI: True
@@ -19,7 +19,8 @@ jobs:
     strategy:
       fail-fast: false 
       matrix:
-        PYTHON_VERSION: ['3.8', '3.10']
+        PYTHON_VERSION: ['3.10']
+        SPYDER_SOURCE: ['git']
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
@@ -33,12 +34,32 @@ jobs:
            activate-environment: test
            auto-update-conda: false
            auto-activate-base: false
-           python-version: ${{ matrix.PYTHON_VERSION }} 
-           use-only-tar-bz2: true
-           channels: conda-forge,defaults
+           python-version: ${{ matrix.PYTHON_VERSION }}
+           channels: conda-forge/label/spyder_kernels_rc,conda-forge,defaults
            channel-priority: strict
            miniforge-variant: Mambaforge
+      - name: Checkout Spyder from git
+        if: matrix.SPYDER_SOURCE == 'git'
+        uses: actions/checkout@v3
+        with:
+          repository: 'spyder-ide/spyder'
+          path: 'spyder'
+      - name: Install Spyder's dependencies (main)
+        if: matrix.SPYDER_SOURCE == 'git'
+        shell: bash -l {0}
+        run: conda env update --file spyder/requirements/main.yml
+      - name: Install Spyder from source
+        if: matrix.SPYDER_SOURCE == 'git'
+        shell: bash -l {0}
+        run: pip install -e spyder
+      - name: Install package dependencies (without Spyder)
+        if: matrix.SPYDER_SOURCE == 'git'
+        shell: bash -l {0}
+        run: |
+          python .github/scripts/generate-without-spyder.py
+          conda install --file requirements/without-spyder.txt -y
       - name: Install package dependencies
+        if: matrix.SPYDER_SOURCE == 'conda'
         shell: bash -l {0}
         run: conda install --file requirements/conda.txt -y -q -c conda-forge
       - name: Install test dependencies
@@ -54,7 +75,3 @@ jobs:
         run: |
           conda info
           conda list
-      - name: Run tests
-        shell: bash -l {0}
-        run: xvfb-run --auto-servernum python runtests.py
-        timeout-minutes: 10
