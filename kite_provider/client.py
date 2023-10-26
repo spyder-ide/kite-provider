@@ -74,6 +74,8 @@ class KiteClient(QObject, KiteMethodProviderMixIn):
             logger.debug('Closing Kite HTTP session...')
             self.endpoint.close()
             self.thread.quit()
+            self.thread.wait()
+            self.thread_started = False
 
     def get_languages(self):
         verb, url = KITE_ENDPOINTS.LANGUAGES_ENDPOINT
