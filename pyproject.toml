@@ -34,5 +34,6 @@ Homepage = "https://github.com/spyder-ide/kite-provider"
 kite = "kite_provider.provider:KiteProvider"
 
 [tool.setuptools]
+py-modules = []
 license-files = ["LICENSE"]
 include-package-data = false
