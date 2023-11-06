@@ -1,4 +1,4 @@
-psutils
+psutil
 qtawesome
 qtpy
 setuptools
