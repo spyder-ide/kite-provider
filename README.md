@@ -28,6 +28,8 @@ To install the provider package, you can use `pip` with something like:
 
 **Note:** Support for Kite is not available anymore. The code here is meant to be used for demonstration proposes only, using it could brake your Spyder setup or make Spyder unstable! Use/install at your own risk.
 
+Some common errors that can occur when trying to use Kite, such as it doesn't seem to register that Spyder is installed. Can't get results from Kite with "welcome file" or "temporary files". Or, When giving completed kite overwrites part of what had been written. This errors can be avoided by changing CRLF (windows) to LF (linux) in the "convert end-of-line characters" option in the "source" menu.
+
 
 
 
