@@ -25,8 +25,6 @@ from kite_provider.widgets import (KiteStatusWidget)
 from spyder.api.config.decorators import on_conf_change
 from spyder.config.base import _, running_under_pytest, get_module_data_path
 from spyder.plugins.completion.api import SpyderCompletionProvider
-from spyder.plugins.mainmenu.api import ApplicationMenus, ToolsMenuSections
-from spyder.utils.icon_manager import ima
 from spyder.utils.image_path_manager import IMAGE_PATH_MANAGER
 from spyder.utils.programs import run_program
 
@@ -39,16 +37,16 @@ class KiteProvider(SpyderCompletionProvider):
     DEFAULT_ORDER = 1
     SLOW = True
     CONF_DEFAULTS = [
-        ('spyder_runs', 1),
-        ('show_installation_dialog', True),
         ('show_onboarding', True),
         ('show_installation_error_message', True)
     ]
-    CONF_VERSION = "0.1.0"
+    CONF_VERSION = "1.0.0"
 
     def __init__(self, parent, config):
         super().__init__(parent, config)
-        IMAGE_PATH_MANAGER.add_image_path(get_module_data_path('kite_provider',relpath='images'))
+        IMAGE_PATH_MANAGER.add_image_path(
+            get_module_data_path('kite_provider', relpath='images')
+        )
         self.available_languages = []
         self.client = KiteClient(None)
         self.kite_process = None
@@ -73,7 +71,6 @@ class KiteProvider(SpyderCompletionProvider):
 
         # Config
         self.update_kite_configuration(self.config)
-
 
     # ------------------ SpyderCompletionProvider methods ---------------------
     def get_name(self):
@@ -111,7 +108,15 @@ class KiteProvider(SpyderCompletionProvider):
                     "directory that appears bellow, "
                     "and try a reinstallation:<br><br>"
                     "<code>{kite_dir}</code>").format(
-                        kite_dir=osp.dirname(path))
+                        kite_dir=osp.dirname(path)
+                    )
+
+                def wrap_message(parent):
+                    return QMessageBox.critical(
+                        parent, _('Kite error'), err_str
+                    )
+
+                self.sig_show_widget.emit(wrap_message)
 
         finally:
             # Always start client to support possibly undetected Kite builds

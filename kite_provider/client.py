@@ -13,7 +13,7 @@ from urllib.parse import quote
 from qtpy.QtCore import QObject, QThread, Signal, QMutex
 import requests
 
-#Spyder imports
+# Spyder imports
 from spyder.config.base import _, running_under_pytest
 from spyder.py3compat import TEXT_TYPES
 
