@@ -28,6 +28,21 @@ To install the provider package, you can use `pip` with something like:
 
 **Note:** Support for Kite is not available anymore. The code here is meant to be used for demonstration proposes only, using it could brake your Spyder setup or make Spyder unstable! Use/install at your own risk.
 
+## Common issues
+
+From our testing, there are some common errors that can occur when using the Kite provider on Windows (or more specifically, when using as files End-Of-Line/EOL the `CRLF` value). Here a list of some of them:
+
+* [Can't get results from Kite inside the onboarding file (`kite_tutorial.py`) or a temporary file](https://github.com/spyder-ide/kite-provider/issues/4)
+* [When accepting Kite completions the text gets partially overwritten](https://github.com/spyder-ide/kite-provider/issues/3)
+
+The errors above can be avoided by changing the files EOL from `CRLF` to `LF`. You can do this change inside Spyder via the `Source` menu: `Source > Convert end-of-line characters` and selecting the option `LF (Unix)`:
+
+![EOL_conversion_for_file](https://github.com/spyder-ide/kite-provider/assets/42411448/d5142856-0d18-410f-b739-196d704ab648)
+
+Besides the option above, you can also use the Spyder `Convert end-of-line characters to the following on save` option. Inside Spyder go to `Preferences > Editor > Advanced settings > End-of-line characters` and enable the option:
+
+![EOL_conversion_on_save](https://github.com/spyder-ide/kite-provider/assets/16781833/379d0244-ae49-4514-b4eb-21b38f63938b)
+
 
 
 

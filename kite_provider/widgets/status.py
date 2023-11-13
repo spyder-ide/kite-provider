@@ -10,9 +10,6 @@ Status widget for Kite completions.
 # Standard library imports
 import logging
 
-# Third party imports
-from qtpy.QtCore import Slot
-
 # Spyder imports
 from spyder.api.widgets.status import StatusBarWidget
 from spyder.config.base import _
@@ -37,7 +34,6 @@ class KiteStatusWidget(StatusBarWidget):
         super().__init__(parent)
         is_installed, _ = check_if_kite_installed()
         self.setVisible(is_installed)
-
 
     def set_value(self, value):
         """Return Kite completions state."""

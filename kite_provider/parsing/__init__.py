@@ -4,7 +4,6 @@
 # Licensed under the terms of the MIT License
 
 # Standard library imports
-import logging
 import re
 
 
