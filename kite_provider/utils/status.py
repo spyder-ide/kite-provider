@@ -100,5 +100,3 @@ def status(extra_status=''):
         return RUNNING + extra_status
     else:
         return NOT_RUNNING + extra_status
-
-
