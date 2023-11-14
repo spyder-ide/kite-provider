@@ -1,4 +1,4 @@
-## Version 0.1.0 (2023/11/13)
+## Version 0.1.0 (2023/11/14)
 
 ### Issues Closed
 
@@ -13,6 +13,7 @@ In this release 6 issues were closed.
 
 ### Pull Requests Merged
 
+* [PR 14](https://github.com/spyder-ide/kite-provider/pull/14) - PR: Remove some unused configs and do some final code clean up, by [@dalthviz](https://github.com/dalthviz)
 * [PR 13](https://github.com/spyder-ide/kite-provider/pull/13) - PR: Update README with Spyder config to workaround errors related with file line endings, by [@jsbautista](https://github.com/jsbautista) ([4](https://github.com/spyder-ide/kite-provider/issues/4), [3](https://github.com/spyder-ide/kite-provider/issues/3))
 * [PR 11](https://github.com/spyder-ide/kite-provider/pull/11) - PR: Update `thread_started` attribute when stopping client, by [@dalthviz](https://github.com/dalthviz) ([2](https://github.com/spyder-ide/kite-provider/issues/2))
 * [PR 10](https://github.com/spyder-ide/kite-provider/pull/10) - PR: Update `LICENSE` badge and improve `README` note, by [@dalthviz](https://github.com/dalthviz) ([8](https://github.com/spyder-ide/kite-provider/issues/8))
@@ -20,4 +21,4 @@ In this release 6 issues were closed.
 * [PR 6](https://github.com/spyder-ide/kite-provider/pull/6) - PR: Maintenance tasks after initial code migration from Spyder repo, by [@jsbautista](https://github.com/jsbautista) ([5](https://github.com/spyder-ide/kite-provider/issues/5))
 * [PR 1](https://github.com/spyder-ide/kite-provider/pull/1) - PR: Initial Kite provider code from the Spyder main repo, by [@jsbautista](https://github.com/jsbautista)
 
-In this release 6 pull requests were closed.
+In this release 7 pull requests were closed.
