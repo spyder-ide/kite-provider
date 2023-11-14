@@ -4,8 +4,7 @@
 # Licensed under the terms of the MIT License
 
 
-from parsing import (
-    find_returning_function_path)
+from kite_provider.parsing import find_returning_function_path
 
 
 def test_find_returning_function_path():

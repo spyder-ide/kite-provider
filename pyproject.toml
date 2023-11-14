@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kite-provider"
-version = "0.1.0"
+version = "0.2.0"
 description = "Kite completions provider for Spyder"
 authors = [
     {name = "Spyder Project Contributors", email = "spyder.python@gmail.com"},
@@ -34,6 +34,7 @@ Homepage = "https://github.com/spyder-ide/kite-provider"
 kite = "kite_provider.provider:KiteProvider"
 
 [tool.setuptools]
-py-modules = []
+packages = ["kite_provider"]
+py-modules = ["__init__"]
 license-files = ["LICENSE"]
 include-package-data = false
