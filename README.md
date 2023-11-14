@@ -24,7 +24,7 @@ To use this completions provider you will need to install Spyder 6 (at least 6.0
 
 To install the provider package, you can use `pip` with something like:
 
-    pip install git+https://github.com/spyder-ide/kite-provider.git
+    pip install git+https://github.com/spyder-ide/kite-provider.git@v0.1.0
 
 **Note:** Support for Kite is not available anymore. The code here is meant to be used for demonstration proposes only, using it could brake your Spyder setup or make Spyder unstable! Use/install at your own risk.
 
