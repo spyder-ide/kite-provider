@@ -1,3 +1,13 @@
+## Version 0.2.0 (2023/11/20)
+
+
+### Pull Requests Merged
+
+* [PR 16](https://github.com/spyder-ide/kite-provider/pull/16) - PR: Missing specification in `pyproject.toml` to make `kite_provider` discoverable, by [@dalthviz](https://github.com/dalthviz)
+
+In this release 1 pull request was closed.
+
+
 ## Version 0.1.0 (2023/11/14)
 
 ### Issues Closed
