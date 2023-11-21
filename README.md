@@ -41,10 +41,7 @@ The errors above can be avoided by changing the files EOL from `CRLF` to `LF`. Y
 
 Besides the option above, you can also use the Spyder `Convert end-of-line characters to the following on save` option. Inside Spyder go to `Preferences > Editor > Advanced settings > End-of-line characters` and enable the option:
 
-![EOL_conversion_on_save](https://github.com/spyder-ide/kite-provider/assets/16781833/379d0244-ae49-4514-b4eb-21b38f63938b)
-
-
-
+![EOL_conversion_on_save](https://github.com/spyder-ide/kite-provider/assets/16781833/cd856b9e-57cb-41a4-ab7b-986b90993f0a)
 
 ## Dependencies
 
