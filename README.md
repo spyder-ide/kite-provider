@@ -22,9 +22,9 @@
 
 To use this completions provider you will need to install Spyder 6 (at least 6.0.0a3) and install Kite (latest executable available from the [Kite release page](https://github.com/kiteco/kiteco-public/releases/tag/2021-06-10))
 
-To install the provider package, you can use `pip` with something like:
+To install the provider package, clone this repo and then over the root of the created directory (and the Python environment you want to install the provider activated) you can use `pip` with something like:
 
-    pip install git+https://github.com/spyder-ide/kite-provider.git@v0.2.0
+    pip install -e .
 
 **Note:** Support for Kite is not available anymore. The code here is meant to be used for demonstration proposes only, using it could brake your Spyder setup or make Spyder unstable! Use/install at your own risk.
 
